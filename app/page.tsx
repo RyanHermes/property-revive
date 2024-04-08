@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './Home.module.css';
+import Layout from './layout';
 
 export default function Home() {
   return (
-    <div>
+    <Layout>
       <Head>
         <title>Home</title>
         <link rel="stylesheet" href="style.css" />
@@ -30,6 +31,6 @@ export default function Home() {
       <div className={styles.footer}>
         <p>&copy; 2024 Property Revive</p>
       </div>
-    </div>
+  </Layout>
   );
 }
