@@ -8,7 +8,6 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Home</title>
-        <link rel="stylesheet" href="style.css" />
       </Head>
 
       <div className="header">
