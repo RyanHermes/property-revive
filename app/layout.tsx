@@ -4,6 +4,10 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
-  return <div>{children}</div>;
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <main>{children}</main>
+  );
 }
+
+export default Layout;
