@@ -1,13 +1,18 @@
-import { ReactNode } from 'react';
+import type { Metadata } from "next";
 
-interface LayoutProps {
-  children: ReactNode;
-}
+export const metadata: Metadata = {
+  title: "Property Revive",
+  description: "Property Revive is a property management company that helps you manage your property.",
+};
 
-const Layout = ({ children }: LayoutProps) => {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <main>{children}</main>
+    <html lang="en">
+      <body>{children}</body>
+    </html>
   );
 }
-
-export default Layout;

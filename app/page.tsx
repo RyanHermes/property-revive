@@ -1,15 +1,9 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import styles from './Home.module.css';
-import Layout from './layout';
 
 export default function Home() {
   return (
-    <Layout>
-      <Head>
-        <title>Home</title>
-      </Head>
-
+    <main>
       <div className="header">
         <Image src="/pr_name.svg" alt="logo" width={500} height={300} />
         <div className={styles.headerRight}>
@@ -30,6 +24,6 @@ export default function Home() {
       <div className={styles.footer}>
         <p>&copy; 2024 Property Revive</p>
       </div>
-  </Layout>
+    </main>
   );
 }
