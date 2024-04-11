@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ImgComparisonSlider } from '@img-comparison-slider/react';
+import ImageComparison from '@/components/ImageComparison';
 
 export default function Home() {
   return (
@@ -26,15 +26,11 @@ export default function Home() {
         </div>
       </div>
 
-<div className="results">
-
-      <h1>Before and After</h1>
-      <div className="comparison">
-      <ImgComparisonSlider>
-        <Image slot='first' src="/before.png" alt="logo" width={1000} height={1000} />
-        <Image slot='second' src="/after.png" alt="logo" width={1000} height={1000} />
-      </ImgComparisonSlider>
-      </div>
+      <div className="results">
+        <h1>Before and After</h1>
+        <div className="comparison">
+          <ImageComparison />
+        </div>
       </div>
 
       <div className="footer">
