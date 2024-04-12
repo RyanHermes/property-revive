@@ -1,9 +1,9 @@
-import Head from 'next/head';
 import './global.css'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Metadata } from'next'
 
-export const metadata = {
+export const metadata : Metadata = {
   title: "Property Revive" as string,
   description: "Property Revive is a property management company that helps you manage your property." as string,
 };
@@ -15,10 +15,6 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <Head>
-        <title>{metadata.title || 'Default Title'}</title>
-        <meta name="description" content={metadata.description || 'Default Description'} />
-      </Head>
       <Header />
         {children}
       <Footer />
