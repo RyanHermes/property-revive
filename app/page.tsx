@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ImageComparison from '@/components/ImageComparison';
+import SocialMedia from '@/components/SocialMedia';
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <div className="hero-image">
         <div className="hero-text">
           <h1>Property Revive</h1>
-          <p>Property Revive is a property management company that helps you manage your property.</p>
+          <p>Welcome to Property Revive, where we redefine exterior maintenance with comprehensive services that go beyond the ordinary. Specializing in expert window washing and thorough gutter cleaning, we also offer a range of additional exterior solutions to elevate the beauty and functionality of your property. From pressure washing to roof cleaning and beyond, our skilled team is dedicated to restoring and preserving the integrity of your exterior surfaces. With a commitment to excellence and attention to detail, Property Revive ensures that every aspect of your property receives the care it deserves. Trust us to revive your property's exterior, leaving it sparkling, refreshed, and rejuvenated.</p>
         </div>
       </div>
 
