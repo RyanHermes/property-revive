@@ -5,7 +5,8 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 export default function Header() {
-    const pathname = usePathname();
+    const pathname = usePathname()
+
     return (
         <div className="header">
             <Link href="/">
@@ -13,11 +14,12 @@ export default function Header() {
             </Link>
             <div className="headerLinks">
                 <nav>
-                    <Link className={pathname === "/contact" ? "active" : ""} href="/contact">Contact</Link>
+                    <Link className={pathname === "/contact" ? "active" : ""} href="/contact">Contact Us</Link>
+                    <Link className={pathname === "/services" ? "active" : ""} href="/services">Services</Link>
                     <Link className={pathname === "/about" ? "active" : ""} href="/about">About</Link>
                     <Link className={pathname === "/" ? "active" : ""} href="/">Home</Link>
                 </nav>
             </div>
         </div>
-    );
+    )
 }
