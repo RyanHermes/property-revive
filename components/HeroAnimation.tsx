@@ -6,7 +6,7 @@ export default function HeroAnimation() {
     const fade = useSpring({
         from: { opacity: 0 },
         to: { opacity: 1 },
-        delay: 1000,
+        delay: 500,
     })
 
     return (
