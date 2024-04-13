@@ -1,24 +1,29 @@
 import './global.css'
 import React from 'react'
-import { Metadata } from'next'
+import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-export const metadata : Metadata = {
-  title: "Property Revive" as string,
-  description: "Property Revive is a property management company that helps you manage your property." as string,
+export const metadata: Metadata = {
+    title: "Property Revive" as string,
+    description: "Property Revive is a property management company that helps you manage your property." as string,
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <Header />
-        {children}
-      <Footer />
-    </>
-  );
+    children,
+}: {
+    children: React.ReactNode
+}) {
+
+    return (
+        <html lang="en">
+            <body>
+                <main>
+                    <Header />
+                    {children}
+                    <Footer />
+                </main>
+            </body>
+        </html>
+    )
 }
