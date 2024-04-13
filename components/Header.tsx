@@ -1,7 +1,11 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
+    const pathname = usePathname();
     return (
         <div className="header">
             <Link href="/">
@@ -9,9 +13,9 @@ export default function Header() {
             </Link>
             <div className="headerLinks">
                 <nav>
-                    <Link href="/contact">Contact</Link>
-                    <Link href="/about">About</Link>
-                    <Link className="active" href="/">Home</Link>
+                    <Link className={pathname === "/contact" ? "active" : ""} href="/contact">Contact</Link>
+                    <Link className={pathname === "/about" ? "active" : ""} href="/about">About</Link>
+                    <Link className={pathname === "/" ? "active" : ""} href="/">Home</Link>
                 </nav>
             </div>
         </div>
