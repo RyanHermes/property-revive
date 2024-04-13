@@ -8,9 +8,9 @@ export default function Header() {
     const pathname = usePathname()
 
     return (
-        <div className="header">
+        <header className="header">
             <Link href="/">
-                <Image src="/pr_name.svg" alt="logo" width={300} height={50} priority />
+                <Image src="/pr_name.svg" alt="logo" width={300} height={50}  priority />
             </Link>
             <div className="headerLinks">
                 <nav>
@@ -20,6 +20,6 @@ export default function Header() {
                     <Link className={pathname === "/" ? "active" : ""} href="/">Home</Link>
                 </nav>
             </div>
-        </div>
+        </header>
     )
 }

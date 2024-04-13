@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import ImageComparison from '@/components/ImageComparison'
 import HeroAnimation from "@/components/HeroAnimation";
+
 
 export default function Home() {
     return (
@@ -11,14 +11,16 @@ export default function Home() {
             <div className="intro">
                 <Image src="/pr_logo.svg" alt="logo" width={500} height={300} />
                 <div className="introRight">
-                    <h1>Website Coming Soon</h1>
-                    <p>Welcome to Property Revive, where we redefine exterior maintenance with comprehensive services that go beyond the ordinary. Specializing in expert window washing and thorough gutter cleaning, we also offer a range of additional exterior solutions to elevate the beauty and functionality of your property. From pressure washing to roof cleaning and beyond, our skilled team is dedicated to restoring and preserving the integrity of your exterior surfaces.<br /><br /> With a commitment to excellence and attention to detail, Property Revive ensures that every aspect of your property receives the care it deserves. Trust us to revive your property&apos;s exterior, leaving it sparkling, refreshed, and rejuvenated.</p>
-                </div>
-            </div>
-            <div className="results">
-                <h1>Before and After</h1>
-                <div className="comparison">
-                    <ImageComparison />
+                    <strong>
+                        <p style={{color: '#275ce1', textShadow: '4px 2px white', fontSize: '30px'}}>Welcome to Property Revive, where we redefine exterior maintenance with comprehensive services
+                        that go beyond the ordinary. Specializing in expert window washing and thorough gutter cleaning,
+                        we also offer a range of additional exterior solutions to elevate the beauty and functionality
+                        of your property.</p>
+
+                        <p style={{color: 'navy', textShadow: '4px 2px white', fontSize: '25px'}}> With a commitment to excellence and attention to detail, Property Revive ensures that every aspect of
+                        your property receives the care it deserves. Trust us to revive your property&apos;s exterior,
+                        leaving it sparkling, refreshed, and rejuvenated.</p>
+                    </strong>
                 </div>
             </div>
         </main>

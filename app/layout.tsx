@@ -1,4 +1,4 @@
-import './global.css'
+import './styles/globals.css'
 import React from 'react'
 import { Metadata } from 'next'
 import Header from '@/components/Header'
