@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import { ImgComparisonSlider } from '@img-comparison-slider/react';
 import Image from 'next/image';

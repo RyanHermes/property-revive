@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import ImageComparison from '@/components/ImageComparison';
+import Image from 'next/image'
+import ImageComparison from '@/components/ImageComparison'
 
 export default function Home() {
   return (
