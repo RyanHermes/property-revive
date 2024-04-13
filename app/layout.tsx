@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
     title: "Property Revive" as string,
     description: "Property Revive is a property management company that helps you manage your property." as string,
-};
+}
 
 export default function RootLayout({
     children,

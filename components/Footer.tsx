@@ -6,5 +6,5 @@ export default function Footer() {
             <p>&copy; 2024 Property Revive</p>
             <SocialMedia />
         </div>
-    );
+    )
 }

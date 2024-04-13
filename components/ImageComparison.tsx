@@ -9,5 +9,5 @@ export default function ImageComparison() {
             <Image slot='first' src="/before.png" alt="logo" width={500} height={500} />
             <Image slot='second' src="/after.png" alt="logo" width={500} height={500} />
         </ImgComparisonSlider>
-    );
+    )
 }
