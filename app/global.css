@@ -42,7 +42,7 @@ body {
         float: none;
         width: 100%;
         display: block;
-        text-align: left;  /* Change to 'center' if you want the links to be centered */
+        text-align: center;
     }
 
     .header img {
@@ -53,14 +53,11 @@ body {
 
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('/pr_hero.jpg');
-    height: 50%;
-  
+    height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-
-    height: 500px;
 }
 
 .hero-text {
@@ -106,7 +103,7 @@ body {
     margin-bottom: 50px;
 }
 
-.footer { 
+.footer {
     padding: 20px;
     width: 100%;
     background-color: #a5dcf3;
