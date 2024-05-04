@@ -12,7 +12,7 @@ export default function HeroAnimation() {
     return (
         <animated.div className="hero-text" style={fade}>
             <h1>Property Revive</h1>
-            <p>Let Property Revive Refresh Your Home!</p>
+            <h2>Let Property Revive Refresh Your Home!</h2>
         </animated.div>
     )
 }

@@ -1,6 +1,14 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 6rem;
 }
 
 .header {
@@ -52,7 +60,7 @@ body {
 
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('/pr_hero.jpg');
-    height: 500px;
+    height: 800px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
