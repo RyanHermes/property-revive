@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Poppins, Hepta_Slab } from "next/font/google";
 
-export const poppins = Poppins({
+const poppins = Poppins({
     weight: "400",
     subsets: ["latin"],
     variable: "--font-poppins",
