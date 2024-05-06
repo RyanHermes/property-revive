@@ -2,11 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 h1 {
     font-size: 6rem;
 }
@@ -30,6 +25,7 @@ h1 {
     font-size: 20px;
     border-radius: 4px;
     margin: 5px;
+    cursor: pointer;
 }
 
 
@@ -83,12 +79,10 @@ h1 {
 
 .intro {
     background-color: #a5dcf3;
-    /*border-top: 8px dashed #42a2dd;*/
-    /*border-bottom: 8px dashed #42a2dd;*/
     background-image: url('/diagonal-dashes.svg');
     background-repeat: repeat-x;
     background-position: top;
-    border-top: 8px solid transparent; /* Adjust the thickness to match your SVG */
+    border-top: 8px solid transparent;
     overflow: hidden;
     width: 100%;
 }
@@ -100,8 +94,19 @@ h1 {
 }
 
 .intro p {
-    margin-right: 20px;
     text-align: center;
+}
+
+#paragraph1 {
+    font-family: var(--font-poppins);
+}
+
+#paragraph2 {
+    font-family: var(--font-hepta-slab);
+}
+
+.services {
+    background-color: #ADD8E6;
 }
 
 .results .comparison {
@@ -111,58 +116,19 @@ h1 {
 }
 
 .footer {
-    background-color: #1D1D1D;
-    color: white;
-    padding: 20px;
-    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.wave svg {
+    width: 100%;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #333;
-}
-
-.footer-section {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-link {
-    color: white;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-statement {
-    max-width: 400px;
-    text-align: right;
-}
-
-.estimate-button {
-    background-color: #42a2dd; /* Adjust the color to match the design */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.phone-number {
-    color: white;
-    text-decoration: none;
+    position: absolute;
+    bottom: 3vh;
+    width: 100%;
+    text-align: center;
 }

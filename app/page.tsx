@@ -5,65 +5,103 @@ import GutterImageComparison from "@/components/GutterImageComparison";
 export default function Home() {
     return (
         <main>
-            <div className={"hero-image"}>
-                <HeroAnimation />
-            </div>
-            <div className="intro">
-                <Image src="/pr_badge.png" alt="logo" width={500} height={500} />
-                <div className="introRight m-10">
-                    <strong>
-                        <p style={{ color: "#275ce1", fontSize: "30px" }}>
-                            Welcome to Property Revive, where we redefine exterior maintenance
-                            with comprehensive services that go beyond the ordinary.
-                            Specializing in expert window washing and thorough gutter
-                            cleaning, we also offer a range of additional exterior solutions
-                            to elevate the beauty and functionality of your property.
-                        </p>
+            <section id="about">
+                <div className="relative">
+                    <div className="hero-image z-0">
+                        <HeroAnimation />
+                    </div>
+                    <div className="intro flex items-center gap-10">
+                        <div style={{ position: 'absolute', zIndex: 10, left: '15%', top: '70%' }}>
+                            <Image src="/pr_badge.png" alt="logo" width={800} height={800} />
+                        </div>
+                        <div className="introRight ml-auto" style={{ maxWidth: '60%', paddingRight: '300px' }}>
+                            <strong>
+                                <p id="paragraph1" style={{ color: "#000000", fontSize: "20px", textAlign: 'left', margin: '40px' }}>
+                                    Our work is exterior cleaning, but our mission is creating extraordinary experiences.
+                                </p>
 
-                        <p
-                            style={{
-                                color: "navy",
-                                textShadow: "4px 2px white",
-                                fontSize: "25px",
-                            }}
-                        >
-                            {" "}
-                            With a commitment to excellence and attention to detail, Property
-                            Revive ensures that every aspect of your property receives the
-                            care it deserves. Trust us to revive your property&apos;s
-                            exterior, leaving it sparkling, refreshed, and rejuvenated.
-                        </p>
-                    </strong>
+                                <p id="paragraph2"
+                                    style={{
+                                        color: "navy", fontSize: "20px", textAlign: 'left', margin: '40px'
+                                    }}>
+                                    When you spot the blue shirts, you know your home will be held to the highest standard.
+                                </p>
+                            </strong>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+            <section id="services">
 
-            <div className="services w-full h-auto p-10">
-    <h1 className="text-center">Our Services</h1>
-    <div className="servicesList grid grid-cols-3 md:grid-cols-1 gap-10">
-        <div className="service shadow-2xl">
-            <h3 className="text-center text-2xl font-bold">Window Washing</h3>
-            <p className="text-center mb-10">
-                Our expert window washing service ensures that your windows are
-                sparkling clean, inside and out.
-            </p>
-        </div>
-        <div className="service shadow-2xl">
-            <h3 className="text-center text-2xl font-bold">Gutter Cleaning</h3>
-            <p className="text-center mb-10">
-                Our thorough gutter cleaning service ensures that your gutters are
-                free of debris and functioning properly.
-            </p>
-            <GutterImageComparison />
-        </div>
-        <div className="service shadow-2xl">
-            <h3 className="text-center text-2xl font-bold">Pressure Washing</h3>
-            <p className="text-center mb-10">
-                Our pressure washing service removes dirt, grime, and mildew from
-                your property&apos;s exterior surfaces.
-            </p>
-        </div>
-    </div>
-</div>
+                <div className="services w-full h-auto p-10">
+                    <h1 className="text-center">Our Services</h1>
+                    <div className="servicesList grid grid-cols-3 md:grid-cols-1 gap-10">
+                        <div className="service shadow-2xl rounded-lg">
+                            <h3 className="text-center text-2xl font-bold">Window Washing</h3>
+                            <p className="text-center mb-10">
+                                Our expert window washing service ensures that your windows are
+                                sparkling clean, inside and out.
+                            </p>
+                        </div>
+                        <div className="service shadow-2xl">
+                            <h3 className="text-center text-2xl font-bold">Gutter Cleaning</h3>
+                            <p className="text-center mb-10">
+                                Our thorough gutter cleaning service ensures that your gutters are
+                                free of debris and functioning properly.
+                            </p>
+                            <GutterImageComparison />
+                        </div>
+                        <div className="service shadow-2xl">
+                            <h3 className="text-center text-2xl font-bold">Power Washing</h3>
+                            <p className="text-center mb-10">
+                                Our power washing service removes dirt, grime, and mildew from
+                                your property&apos;s exterior surfaces.
+                            </p>
+                        </div>
+                        <div className="service shadow-2xl">
+                            <h3 className="text-center text-2xl font-bold">Soft Washing</h3>
+                            <p className="text-center mb-10">
+                                Our soft washing service gently cleans your property&apos;s exterior
+                                surfaces without causing damage.
+                            </p>
+                        </div>
+                        <div className="service shadow-2xl">
+                            <h3 className="text-center text-2xl font-bold">Pest Control</h3>
+                            <p className="text-center mb-10">
+                                Our pest control service eliminates pests from your property and
+                                prevents them from returning.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <div className="contactForm w-full h-auto p-10">
+                    <h1 className="text-center">Contact Us</h1>
+                    <div className="contactFormContent grid grid-cols-2 gap-10">
+                        <div className="contactFormImage">
+                            <Image src="/pr_badge.png" alt="logo" width={800} height={800} />
+                        </div>
+                        <div className="contactFormForm">
+                            <form>
+                                <div className="mb-5">
+                                    <label htmlFor="name" className="block mb-2">Name</label>
+                                    <input type="text" name="name" id="name" className="w-full p-2" />
+                                </div>
+                                <div className="mb-5">
+                                    <label htmlFor="email" className="block mb-2">Email</label>
+                                    <input type="email" name="email" id="email" className="w-full p-2" />
+                                </div>
+                                <div className="mb-5">
+                                    <label htmlFor="message" className="block mb-2">Message</label>
+                                    <textarea name="message" id="message" className="w-full p-2"></textarea>
+                                </div>
+                                <button type="submit" className="w-full bg-blue-500 text-white p-2">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     );
 }
