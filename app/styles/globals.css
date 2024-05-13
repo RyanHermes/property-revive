@@ -6,6 +6,21 @@ h1 {
     font-size: 6rem;
 }
 
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .sparkle-big {
+      left: -5rem !important;
+    }
+    .sparkle-small {
+      left: 0rem !important;
+    }
+  }
+
 .header {
     overflow: hidden;
     background-color: #ffffff;
@@ -40,7 +55,7 @@ h1 {
     color: white;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
     .header Link {
         float: none;
         width: 100%;
@@ -75,6 +90,24 @@ h1 {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 50px;
+}
+
+@media screen and (max-width: 767px) {
+    .hero-image {
+        background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/pr_hero.jpg');
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-text {
+        color: white;
+        text-align: center;
+        background-color: transparent;
+        top: 50%;
+        left: 50%;
+    }
 }
 
 .intro {

@@ -15,7 +15,10 @@ const config: Config = {
       },
       maxWidth: {
         '3/5': '60%',
-      }
+      },
+      colors: {
+        'custom-blue': '#0099ff',
+      },
     },
   },
   plugins: [],
