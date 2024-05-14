@@ -54,16 +54,16 @@ export default function Header() {
                         <Image src="/close_black.png" alt="Close" width={30} height={30} />
                     </button>
                     <div className="headerLinks flex flex-col md:flex-row items-center mt-10 md:mt-0 mb-auto">
-                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={500}>
+                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="about" spy={true} smooth={true} offset={-100} duration={500}>
                             About
                         </ScrollLink>
-                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="services" spy={true} smooth={true} offset={-70} duration={500}>
+                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="services" spy={true} smooth={true} offset={-100} duration={500}>
                             Services
                         </ScrollLink>
-                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="results" spy={true} smooth={true} offset={-70} duration={500}>
+                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="results" spy={true} smooth={true} offset={-100} duration={500}>
                             Results
                         </ScrollLink>
-                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="contact" spy={true} smooth={true} offset={-70} duration={500}>
+                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="contact" spy={true} smooth={true} offset={-100} duration={500}>
                             Contact Us
                         </ScrollLink>
                     </div>
