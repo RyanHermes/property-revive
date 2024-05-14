@@ -85,7 +85,7 @@ export default function Home() {
             </section>
             <section id="contact">
                 <div className="contactForm w-full h-auto p-10 pt-0">
-                    <h1 className="text-center pb-5">Contact Us</h1>
+                    <h1 className="text-center">Contact Us</h1>
                     <div className="contactFormContent grid grid-cols-2 gap-10">
                         <div className="contactFormImage">
                             <Image src="/roof.jpg" alt="logo" width={800} height={800} />
