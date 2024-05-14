@@ -78,9 +78,9 @@ export default function Home() {
                 <div className="results w-full h-auto p-10">
                     <h1 className="text-center">Results</h1>
                     <div className="flex flex-col md:flex-row justify-center gap-20">
-    <WindowImageComparison />
-    <GutterImageComparison />
-</div>
+                        <WindowImageComparison />
+                        <GutterImageComparison />
+                    </div>
                 </div>
             </section>
             <section id="contact">
