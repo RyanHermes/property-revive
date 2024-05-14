@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroAnimation from "@/components/HeroAnimation";
+import Hero from "@/components/Hero";
 import GutterImageComparison from "@/components/GutterImageComparison";
 import WindowImageComparison from "@/components/WindowImageComparison";
 
@@ -9,7 +9,7 @@ export default function Home() {
             <section id="about">
                 <div className="relative">
                     <div className="hero-image z-0">
-                        <HeroAnimation />
+                        <Hero />
                     </div>
                     <div className="intro flex items-center gap-10">
                         <div className="hidden md:block" style={{ position: 'absolute', zIndex: 10, left: '15%', top: '70%' }}>

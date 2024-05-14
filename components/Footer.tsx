@@ -12,7 +12,6 @@ export default function Footer() {
                 <div className="footer-content-left">
                     {/* Copyright */}
                     <p className='text-md md:text-xl'><strong>© 2024 Property Revive</strong> All Rights Reserved</p>
-                    <p className='text-md md:text-xl'>Anthony Hatoum & Ryan Hermes</p>
                     <SocialMedia />
                 </div>
             </div>

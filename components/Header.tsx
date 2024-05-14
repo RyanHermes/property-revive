@@ -43,7 +43,7 @@ export default function Header() {
             <header className="header fixed top-0 left-0 w-full z-50 flex justify-between">
                 <Link href="/">
                     <div className="block h-16 w-64 md:h-20 md:w-80">
-                        <Image src="/pr_name.svg" alt="logo" width={320} height={64} layout="responsive" priority />
+                    <Image src="/pr_name.svg" alt="logo" width={320} height={64} />
                     </div>
                 </Link>
                 <button onClick={() => setIsOpen(!isOpen)} className="md:hidden mr-4">
