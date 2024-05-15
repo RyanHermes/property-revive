@@ -1,19 +1,17 @@
 'use client'
 
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm, SubmitHandler } from "react-hook-form";
 import styled from 'styled-components';
-import { NextResponse } from 'next/server';
-import { insertUser, getUsers } from '../app/api/db';
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 interface IFormInput {
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  address: string
-  service: string
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  address: string;
+  service: string;
 }
 
 const StyledForm = styled.form`
@@ -28,11 +26,11 @@ const StyledForm = styled.form`
   margin: auto;
   background-color: #f0f0f0;
 
-  @media (min-width: 768px) { // Tablet
+  @media (min-width: 768px) {
     width: 100%;
   }
 
-  @media (min-width: 1024px) { // Desktop
+  @media (min-width: 1024px) {
     width: 100%;
   }
 `;
@@ -56,11 +54,11 @@ const StyledInput = styled.input<{ hasError?: boolean }>`
     border-color: ${props => (props.hasError ? "red" : "blue")};
   }
 
-  @media (min-width: 768px) { // Tablet
+  @media (min-width: 768px) {
     font-size: 18px;
   }
 
-  @media (min-width: 1024px) { // Desktop
+  @media (min-width: 1024px) {
     font-size: 20px;
   }
 `;
@@ -96,11 +94,11 @@ const StyledSelect = styled.select<{ hasError?: boolean }>`
     border-color: ${props => (props.hasError ? "red" : "blue")};
   }
 
-  @media (min-width: 768px) { // Tablet
+  @media (min-width: 768px) {
     font-size: 18px;
   }
 
-  @media (min-width: 1024px) { // Desktop
+  @media (min-width: 1024px) {
     font-size: 20px;
   }
 `;
@@ -123,25 +121,36 @@ export default function Form() {
   const [isVerified, setIsVerified] = useState(false);
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    setIsSubmitted(true);
+    setIsSubmitted(false);
 
-    try {
-      await insertUser(data);
-    } catch (error) {
-      return NextResponse.json({ error }, { status: 500 });
+    if (!isVerified) {
+      alert("Please complete the CAPTCHA");
+      return;
     }
 
     try {
-      const users = await getUsers();
-      return NextResponse.json({ users }, { status: 200 });
+      const response = await fetch('/api/db', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error submitting the form');
+      }
+
+      setIsSubmitted(true);
     } catch (error) {
-      return NextResponse.json({ error }, { status: 500 });
+      console.error(error);
+      alert("Error submitting the form");
     }
-  }
+  };
 
   const onCaptchaChange = (value: string | null) => {
     setIsVerified(!!value);
-  }
+  };
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
