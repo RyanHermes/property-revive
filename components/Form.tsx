@@ -1,9 +1,9 @@
 'use client'
 
 import { useForm, SubmitHandler } from "react-hook-form";
+import ReCAPTCHA from "react-google-recaptcha";
 import styled from 'styled-components';
 import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 
 interface IFormInput {
     firstName: string;
@@ -118,6 +118,7 @@ const StyledSuccess = styled.p`
 export default function Form() {
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
     const [isVerified, setIsVerified] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
 
@@ -136,9 +137,7 @@ export default function Form() {
                 throw new Error('Error submitting the form');
             }
 
-            if (typeof window !== 'undefined') {
-                sessionStorage.setItem('formSubmitted', 'true');
-            }
+            setIsSubmitted(true);
         } catch (error) {
             console.error(error);
             alert("Error submitting the form");
@@ -200,11 +199,11 @@ export default function Form() {
                 {errors.service && <StyledError>Service is required</StyledError>}
             </StyledLabel>
 
-            {!isVerified && <ReCAPTCHA sitekey="6LdkNd0pAAAAAMWxpgO24V01eX1Tq6mr9T4byf9x" onChange={onCaptchaChange} />}
+            {!isVerified && !isSubmitted && <ReCAPTCHA sitekey="6LdkNd0pAAAAAMWxpgO24V01eX1Tq6mr9T4byf9x" onChange={onCaptchaChange} />}
 
-            {typeof window !== 'undefined' && !sessionStorage.getItem('formSubmitted') && <StyledInput type="submit" aria-label="Submit" />}
+            {isVerified && !isSubmitted && <StyledInput type="submit" aria-label="Submit" />}
 
-            {sessionStorage.getItem('formSubmitted') && <StyledSuccess>Form submitted successfully!</StyledSuccess>}
+            {isSubmitted && <StyledSuccess>Form submitted successfully!</StyledSuccess>}
         </StyledForm>
     )
 }
