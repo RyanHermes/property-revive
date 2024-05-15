@@ -145,7 +145,7 @@ export default function Form() {
     };
 
     const onCaptchaChange = async (value: string | null) => {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 500));
         setIsVerified(!!value);
     };
 
