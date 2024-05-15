@@ -1,8 +1,20 @@
 'use server'
 
-import { createPool } from '@vercel/postgres';
+import { createPool, VercelPostgresPoolConfig } from '@vercel/postgres';
+import url from 'url';
 
-const pool = createPool(process.env.POSTGRES_URL);
+const params = url.parse(process.env.POSTGRES_URL);
+const auth = params.auth.split(':');
+
+const config: VercelPostgresPoolConfig = {
+  database: params.pathname.split('/')[1],
+  hostname: params.hostname,
+  port: Number(params.port),
+  username: auth[0],
+  password: auth[1],
+};
+
+const pool = createPool(config);
 
 export async function insertUser(data) {
   try {
