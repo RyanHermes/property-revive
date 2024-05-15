@@ -2,6 +2,7 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import GutterImageComparison from "@/components/GutterImageComparison";
 import WindowImageComparison from "@/components/WindowImageComparison";
+import Form from "@/components/Form";
 
 export default function Home() {
     return (
@@ -88,15 +89,12 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            {/* <section id="contact">
+            <section id="contact">
                 <div className="contactForm w-full h-auto p-10 pt-0">
                     <h1 className="text-center">Contact Us</h1>
-                    <div className="contactFormContent grid grid-cols-2 gap-10">
-                        <div className="contactFormImage">
-                            <Image src="/roof.jpg" alt="logo" width={800} height={800} />
-                        </div>
+                    <div className="contactFormContent">
                         <div className="contactFormForm">
-                            <form>
+                            {/* <form>
                                 <div className="mb-5">
                                     <label htmlFor="name" className="block mb-2">Name <span className="text-red-500">*</span></label>
                                     <input type="text" name="name" id="name" className="w-full p-2 border-2 border-gray-300 bg-white" required />
@@ -118,11 +116,12 @@ export default function Home() {
                                     <input type="email" name="email" id="email" className="w-full p-2 border-2 border-gray-300 bg-white" />
                                 </div>
                                 <button type="submit" className="w-full bg-blue-500 text-white p-2">Submit</button>
-                            </form>
+                            </form> */}
+                            <Form />
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
         </main>
     );
 }

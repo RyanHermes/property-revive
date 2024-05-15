@@ -63,9 +63,9 @@ export default function Header() {
                         <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="results" spy={true} smooth={true} offset={-100} duration={500}>
                             Results
                         </ScrollLink>
-                        {/* <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="contact" spy={true} smooth={true} offset={-100} duration={500}>
+                        <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="contact" spy={true} smooth={true} offset={-100} duration={500}>
                             Contact Us
-                        </ScrollLink> */}
+                        </ScrollLink>
                     </div>
                 </nav>
             </header>
