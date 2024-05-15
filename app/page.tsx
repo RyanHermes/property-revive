@@ -94,29 +94,6 @@ export default function Home() {
                     <h1 className="text-center">Contact Us</h1>
                     <div className="contactFormContent">
                         <div className="contactFormForm">
-                            {/* <form>
-                                <div className="mb-5">
-                                    <label htmlFor="name" className="block mb-2">Name <span className="text-red-500">*</span></label>
-                                    <input type="text" name="name" id="name" className="w-full p-2 border-2 border-gray-300 bg-white" required />
-                                </div>
-                                <div className="mb-5">
-                                    <label htmlFor="phone" className="block mb-2">Number <span className="text-red-500">*</span></label>
-                                    <input type="text" name="phone" id="phone" className="w-full p-2 border-2 border-gray-300 bg-white" required />
-                                </div>
-                                <div className="mb-5">
-                                    <label htmlFor="email" className="block mb-2">Email</label>
-                                    <input type="email" name="email" id="email" className="w-full p-2 border-2 border-gray-300 bg-white" />
-                                </div>
-                                <div className="mb-5">
-                                    <label htmlFor="email" className="block mb-2">Address</label>
-                                    <input type="email" name="email" id="email" className="w-full p-2 border-2 border-gray-300 bg-white" />
-                                </div>
-                                <div className="mb-5">
-                                    <label htmlFor="email" className="block mb-2">Service</label>
-                                    <input type="email" name="email" id="email" className="w-full p-2 border-2 border-gray-300 bg-white" />
-                                </div>
-                                <button type="submit" className="w-full bg-blue-500 text-white p-2">Submit</button>
-                            </form> */}
                             <Form />
                         </div>
                     </div>

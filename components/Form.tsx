@@ -144,7 +144,8 @@ export default function Form() {
         }
     };
 
-    const onCaptchaChange = (value: string | null) => {
+    const onCaptchaChange = async (value: string | null) => {
+        await new Promise(resolve => setTimeout(resolve, 2000));
         setIsVerified(!!value);
     };
 
