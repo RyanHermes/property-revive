@@ -6,12 +6,12 @@ import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 interface IFormInput {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  address: string;
-  service: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    address: string;
+    service: string;
 }
 
 const StyledForm = styled.form`
@@ -116,98 +116,93 @@ const StyledSuccess = styled.p`
 `;
 
 export default function Form() {
-  const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
+    const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
+    const [isVerified, setIsVerified] = useState(false);
 
-  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    setIsSubmitted(false);
+    const onSubmit: SubmitHandler<IFormInput> = async (data) => {
 
-    if (!isVerified) {
-      alert("Please complete the CAPTCHA");
-      return;
-    }
+        if (!isVerified) {
+            alert("Please complete the CAPTCHA");
+            return;
+        }
 
-    try {
-      const response = await fetch('/api/db', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+        try {
+            const query = new URLSearchParams(data as any).toString();
+            const response = await fetch(`/api/add-user?${query}`, {
+                method: 'GET',
+            });
 
-      if (!response.ok) {
-        throw new Error('Error submitting the form');
-      }
+            if (!response.ok) {
+                throw new Error('Error submitting the form');
+            }
 
-      setIsSubmitted(true);
-    } catch (error) {
-      console.error(error);
-      alert("Error submitting the form");
-    }
-  };
+            sessionStorage.setItem('formSubmitted', 'true');
+        } catch (error) {
+            console.error(error);
+            alert("Error submitting the form");
+        }
+    };
 
-  const onCaptchaChange = (value: string | null) => {
-    setIsVerified(!!value);
-  };
+    const onCaptchaChange = (value: string | null) => {
+        setIsVerified(!!value);
+    };
 
-  return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <StyledLabel>
-        <StyledInput hasError={!!errors.firstName} {...register("firstName", { required: true, maxLength: 20, pattern: /^[A-Za-z-]+$/i })} aria-label="First Name" placeholder="Enter your first name" />
-        <StyledStar>*</StyledStar>
-        {errors.firstName && <StyledError>First name is required</StyledError>}
-      </StyledLabel>
+    return (
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <StyledLabel>
+                <StyledInput hasError={!!errors.firstName} {...register("firstName", { required: true, maxLength: 20, pattern: /^[A-Za-z-]+$/i })} aria-label="First Name" placeholder="Enter your first name" />
+                <StyledStar>*</StyledStar>
+                {errors.firstName && <StyledError>First name is required</StyledError>}
+            </StyledLabel>
 
-      <StyledLabel>
-        <StyledInput hasError={!!errors.lastName} {...register("lastName", { required: true, maxLength: 20, pattern: /^[A-Za-z]+$/i })} aria-label="Last Name" placeholder="Enter your last name" />
-        <StyledStar>*</StyledStar>
-        {errors.lastName && <StyledError>Last name is required</StyledError>}
-      </StyledLabel>
+            <StyledLabel>
+                <StyledInput hasError={!!errors.lastName} {...register("lastName", { required: true, maxLength: 20, pattern: /^[A-Za-z]+$/i })} aria-label="Last Name" placeholder="Enter your last name" />
+                <StyledStar>*</StyledStar>
+                {errors.lastName && <StyledError>Last name is required</StyledError>}
+            </StyledLabel>
 
-      <StyledLabel>
-        <StyledInput hasError={!!errors.email} {...register("email", { required: true, pattern: /^\S+@\S+\.\S+$/ })} aria-label="Email" placeholder="Enter your email" />
-        <StyledStar>*</StyledStar>
-        {errors.email && <StyledError>Email is required and should be a valid email address</StyledError>}
-      </StyledLabel>
+            <StyledLabel>
+                <StyledInput hasError={!!errors.email} {...register("email", { required: true, pattern: /^\S+@\S+\.\S+$/ })} aria-label="Email" placeholder="Enter your email" />
+                <StyledStar>*</StyledStar>
+                {errors.email && <StyledError>Email is required and should be a valid email address</StyledError>}
+            </StyledLabel>
 
-      <StyledLabel>
-        <StyledInput
-          hasError={!!errors.phone}
-          type="tel"
-          {...register("phone", {
-            validate: value => value.length <= 12 || "Phone number should not exceed 12 digits"
-          })}
-          aria-label="Phone"
-          placeholder="Enter your phone number"
-        />
-        {errors.phone && <StyledError>{errors.phone.message}</StyledError>}
-      </StyledLabel>
+            <StyledLabel>
+                <StyledInput
+                    hasError={!!errors.phone}
+                    type="tel"
+                    {...register("phone", {
+                        validate: value => value.length <= 12 || "Phone number should not exceed 12 digits"
+                    })}
+                    aria-label="Phone"
+                    placeholder="Enter your phone number"
+                />
+                {errors.phone && <StyledError>{errors.phone.message}</StyledError>}
+            </StyledLabel>
 
-      <StyledLabel>
-        <StyledInput hasError={!!errors.address} {...register("address", { required: true, maxLength: 100 })} aria-label="Address" placeholder="Enter your address" />
-        <StyledStar>*</StyledStar>
-        {errors.address && <StyledError>Address is required</StyledError>}
-      </StyledLabel>
+            <StyledLabel>
+                <StyledInput hasError={!!errors.address} {...register("address", { required: true, maxLength: 100 })} aria-label="Address" placeholder="Enter your address" />
+                <StyledStar>*</StyledStar>
+                {errors.address && <StyledError>Address is required</StyledError>}
+            </StyledLabel>
 
-      <StyledLabel>
-        <StyledSelect hasError={!!errors.service} {...register("service", { required: true })} aria-label="Service">
-          <option value="">Select a service</option>
-          <option value="Window Washing">Window Washing</option>
-          <option value="Gutter Cleaning">Gutter Cleaning</option>
-          <option value="Power Washing">Power Washing</option>
-          <option value="Soft Washing">Soft Washing</option>
-          <option value="Pest Control">Pest Control</option>
-        </StyledSelect>
-        {errors.service && <StyledError>Service is required</StyledError>}
-      </StyledLabel>
+            <StyledLabel>
+                <StyledSelect hasError={!!errors.service} {...register("service", { required: true })} aria-label="Service">
+                    <option value="">Select a service</option>
+                    <option value="Window Washing">Window Washing</option>
+                    <option value="Gutter Cleaning">Gutter Cleaning</option>
+                    <option value="Power Washing">Power Washing</option>
+                    <option value="Soft Washing">Soft Washing</option>
+                    <option value="Pest Control">Pest Control</option>
+                </StyledSelect>
+                {errors.service && <StyledError>Service is required</StyledError>}
+            </StyledLabel>
 
-      <ReCAPTCHA sitekey="6LdkNd0pAAAAAMWxpgO24V01eX1Tq6mr9T4byf9x" onChange={onCaptchaChange} />
+            {!isVerified && <ReCAPTCHA sitekey="6LdkNd0pAAAAAMWxpgO24V01eX1Tq6mr9T4byf9x" onChange={onCaptchaChange} />}
 
-      {isVerified && <StyledInput type="submit" aria-label="Submit" />}
+            {isVerified && !sessionStorage.getItem('formSubmitted') && <StyledInput type="submit" aria-label="Submit" />}
 
-      {isSubmitted && <StyledSuccess>Form submitted successfully!</StyledSuccess>}
-    </StyledForm>
-  )
+            {sessionStorage.getItem('formSubmitted') && <StyledSuccess>Form submitted successfully!</StyledSuccess>}
+        </StyledForm>
+    )
 }
