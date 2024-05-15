@@ -46,18 +46,12 @@ export default function Header() {
                         <Image src="/pr_name.svg" alt="logo" width={320} height={64} />
                     </div>
                 </Link>
-                {/* <button onClick={() => setIsOpen(!isOpen)} className="md:hidden mr-4">
-                    <Image src="/hamburger_black.png" alt="Menu" width={30} height={30} />
-                </button> */}
-<button onClick={() => setIsOpen(!isOpen)} className={`hamburger hamburger--collapse ${isOpen ? 'is-active' : ''} md:hidden`} type="button">
-    <span className="hamburger-box">
-        <span className="hamburger-inner"></span>
-    </span>
-</button>
+                <button onClick={() => setIsOpen(!isOpen)} className={`hamburger hamburger--collapse ${isOpen ? 'is-active' : ''} md:hidden`} type="button">
+                    <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
+                    </span>
+                </button>
                 <nav className={`fixed top-16 right-0 h-full w-64 bg-white transform transition-transform duration-200 ease-in-out flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:translate-x-0 md:static md:w-auto`}>
-                    {/* <button onClick={() => setIsOpen(false)} className="md:hidden mt-4 mr-4 absolute right-0">
-                        <Image src="/close_black.png" alt="Close" width={30} height={30} />
-                    </button> */}
                     <div className="headerLinks flex flex-col md:flex-row items-center mt-10 md:mt-0 mb-auto">
                         <ScrollLink onClick={() => setIsOpen(false)} activeClass="active" to="about" spy={true} smooth={true} offset={-100} duration={500}>
                             About

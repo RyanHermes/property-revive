@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/globals.css";
 import { Metadata } from "next";
-import "./styles/hamburgers.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Poppins, Hepta_Slab } from "next/font/google";
