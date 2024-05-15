@@ -37,6 +37,7 @@ export default function Home() {
                     <h1 className="text-center">Services</h1>
                     <div className="servicesList grid grid-cols-1 gap-10 justify-items-center">
                         <div className="service shadow-2xl rounded-lg flex flex-col items-center max-w-2xl mx-auto">
+                            <Image className="m-10" src="/window_cleaning_blue.png" alt="logo" width={100} height={100} />
                             <h3 className="text-center text-2xl font-bold">Window Washing</h3>
                             <p className="text-center mb-10">
                                 Our expert window washing service ensures that your windows are
@@ -44,6 +45,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="service shadow-2xl rounded-lg flex flex-col items-center max-w-2xl mx-auto">
+                            <Image className="m-10" src="/gutter_cleaning_blue.png" alt="logo" width={100} height={100} />
                             <h3 className="text-center text-2xl font-bold">Gutter Cleaning</h3>
                             <p className="text-center mb-10">
                                 Our thorough gutter cleaning service ensures that your gutters are
@@ -51,6 +53,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="service shadow-2xl rounded-lg flex flex-col items-center max-w-2xl mx-auto">
+                            <Image className="m-10" src="/pressure_cleaning_blue.png" alt="logo" width={100} height={100} />
                             <h3 className="text-center text-2xl font-bold">Power Washing</h3>
                             <p className="text-center mb-10">
                                 Our power washing service removes dirt, grime, and mildew from
@@ -58,6 +61,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="service shadow-2xl rounded-lg flex flex-col items-center max-w-2xl mx-auto">
+                            <Image className="m-10" src="/soft_cleaning_blue.png" alt="logo" width={100} height={100} />
                             <h3 className="text-center text-2xl font-bold">Soft Washing</h3>
                             <p className="text-center mb-10">
                                 Our soft washing service gently cleans your property&apos;s exterior
@@ -65,6 +69,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="service shadow-2xl rounded-lg flex flex-col items-center max-w-2xl mx-auto">
+                            <Image className="m-10" src="/pest_cleaning_blue.png" alt="logo" width={100} height={100} />
                             <h3 className="text-center text-2xl font-bold">Pest Control</h3>
                             <p className="text-center mb-10">
                                 Our pest control service eliminates pests from your property and
