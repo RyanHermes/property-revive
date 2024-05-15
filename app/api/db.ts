@@ -1,9 +1,9 @@
 'use server'
 
 import { sql } from '@vercel/postgres';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(request) {
+export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
     const { firstName, lastName, email, phone, address, service } = data;
@@ -17,7 +17,7 @@ export async function POST(request) {
     return NextResponse.json({ message: 'User inserted successfully' }, { status: 200 });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
   }
 }
 
@@ -27,6 +27,6 @@ export async function GET() {
     return NextResponse.json({ users }, { status: 200 });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
   }
 }
