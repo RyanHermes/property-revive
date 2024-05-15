@@ -129,12 +129,8 @@ export default function Form() {
     }
 
     try {
-      const response = await fetch('/api/db', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+      const response = await fetch(`/api/add-user?firstName=${data.firstName}&lastName=${data.lastName}&email=${data.email}&phone=${data.phone}&address=${data.address}&service=${data.service}`, {
+        method: 'GET',
       });
 
       if (!response.ok) {
