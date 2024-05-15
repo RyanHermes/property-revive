@@ -136,7 +136,9 @@ export default function Form() {
                 throw new Error('Error submitting the form');
             }
 
-            sessionStorage.setItem('formSubmitted', 'true');
+            if (typeof window !== 'undefined') {
+                sessionStorage.setItem('formSubmitted', 'true');
+            }
         } catch (error) {
             console.error(error);
             alert("Error submitting the form");
@@ -200,7 +202,7 @@ export default function Form() {
 
             {!isVerified && <ReCAPTCHA sitekey="6LdkNd0pAAAAAMWxpgO24V01eX1Tq6mr9T4byf9x" onChange={onCaptchaChange} />}
 
-            {isVerified && !sessionStorage.getItem('formSubmitted') && <StyledInput type="submit" aria-label="Submit" />}
+            {typeof window !== 'undefined' && !sessionStorage.getItem('formSubmitted') && <StyledInput type="submit" aria-label="Submit" />}
 
             {sessionStorage.getItem('formSubmitted') && <StyledSuccess>Form submitted successfully!</StyledSuccess>}
         </StyledForm>
