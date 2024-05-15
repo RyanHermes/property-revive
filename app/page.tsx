@@ -83,7 +83,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section id="contact">
+            {/* <section id="contact">
                 <div className="contactForm w-full h-auto p-10 pt-0">
                     <h1 className="text-center">Contact Us</h1>
                     <div className="contactFormContent grid grid-cols-2 gap-10">
@@ -117,7 +117,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </main>
     );
 }
