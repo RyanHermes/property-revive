@@ -23,8 +23,9 @@ const StyledForm = styled.form`
   border: 1px solid #ccc;
   border-radius: 10px;
   width: 100%;
+  max-width: 1500px;
   margin: auto;
-  background-color: #f0f0f0;
+  background-color: #0099ff;
 
   @media (min-width: 768px) {
     width: 100%;
