@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Link as ScrollLink, Events, scrollSpy } from 'react-scroll'
 
-export default function Header() {
+export default function LoginHeader() {
 	const [isOpen, setIsOpen] = useState(false)
 
 	useEffect(() => {
@@ -68,52 +68,8 @@ export default function Header() {
 					} md:translate-x-0 md:static md:w-auto`}
 				>
 					<div className="headerLinks flex flex-col md:flex-row items-center mt-10 md:mt-0 mb-auto">
-						<ScrollLink
-							onClick={() => setIsOpen(false)}
-							activeClass="active"
-							to="about"
-							spy={true}
-							smooth={true}
-							offset={-100}
-							duration={500}
-						>
-							About
-						</ScrollLink>
-						<ScrollLink
-							onClick={() => setIsOpen(false)}
-							activeClass="active"
-							to="services"
-							spy={true}
-							smooth={true}
-							offset={-100}
-							duration={500}
-						>
-							Services
-						</ScrollLink>
-						<ScrollLink
-							onClick={() => setIsOpen(false)}
-							activeClass="active"
-							to="results"
-							spy={true}
-							smooth={true}
-							offset={-100}
-							duration={500}
-						>
-							Results
-						</ScrollLink>
-						<ScrollLink
-							onClick={() => setIsOpen(false)}
-							activeClass="active"
-							to="contact"
-							spy={true}
-							smooth={true}
-							offset={-100}
-							duration={500}
-						>
-							Contact Us
-						</ScrollLink>
-						<Link href="/login" className="admin-login-link">
-							Admin Login
+						<Link href="/" className="admin-login-link">
+							Go Back
 						</Link>
 					</div>
 				</nav>
