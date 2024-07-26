@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Link as ScrollLink, Events, scrollSpy } from 'react-scroll'
 
 export default function LoginHeader() {
@@ -40,17 +39,12 @@ export default function LoginHeader() {
 					}}
 				/>
 			)}
-			<header className="header fixed top-0 left-0 w-full z-50 flex justify-between">
-				<Link href="/">
-					<div className="block h-16 w-64 md:h-20 md:w-80">
-						<Image
-							src="/pr_name.svg"
-							alt="logo"
-							width={320}
-							height={64}
-						/>
-					</div>
-				</Link>
+			<header
+				className="header fixed top-0 left-0 w-full z-50 flex justify-between"
+				style={{ backgroundColor: 'transparent' }}
+			>
+				<div className="block h-16 w-64 md:h-20 md:w-80"></div>
+
 				<button
 					onClick={() => setIsOpen(!isOpen)}
 					className={`hamburger hamburger--collapse ${
