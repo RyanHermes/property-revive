@@ -107,9 +107,6 @@ export default function Header() {
             >
               Contact Us
             </ScrollLink>
-            <Link href="/login" className="admin-login-link">
-              Admin Login
-            </Link>
           </div>
         </nav>
       </header>
