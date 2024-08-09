@@ -5,7 +5,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import GutterImageComparison from '@/components/GutterImageComparison'
 import WindowImageComparison from '@/components/WindowImageComparison'
-import { LampContainer, LampDemo } from '@/components/ui/lamp'
 
 export default function Home() {
   return (
