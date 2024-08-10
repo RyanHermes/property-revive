@@ -43,16 +43,16 @@ const StyledLabel = styled.label`
   position: relative;
 `
 
-const StyledInput = styled.input<{ hasError?: boolean }>`
+const StyledInput = styled.input<{ $hasError: boolean }>`
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid ${(props) => (props.hasError ? 'red' : 'gray')};
+  border: 1px solid ${(props) => (props.$hasError ? 'red' : 'gray')};
   width: 100%;
   font-size: 16px;
   transition: border-color 0.3s ease-in-out;
 
   &:focus {
-    border-color: ${(props) => (props.hasError ? 'red' : 'blue')};
+    border-color: ${(props) => (props.$hasError ? 'red' : 'blue')};
   }
 
   @media (min-width: 768px) {
@@ -83,16 +83,16 @@ const StyledStar = styled.span`
   top: 10px;
 `
 
-const StyledSelect = styled.select<{ hasError?: boolean }>`
+const StyledSelect = styled.select<{ $hasError: boolean }>`
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid ${(props) => (props.hasError ? 'red' : 'gray')};
+  border: 1px solid ${(props) => (props.$hasError ? 'red' : 'gray')};
   width: 100%;
   font-size: 16px;
   transition: border-color 0.3s ease-in-out;
 
   &:focus {
-    border-color: ${(props) => (props.hasError ? 'red' : 'blue')};
+    border-color: ${(props) => (props.$hasError ? 'red' : 'blue')};
   }
 
   @media (min-width: 768px) {
@@ -157,7 +157,7 @@ export default function Form() {
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <StyledLabel>
         <StyledInput
-          hasError={!!errors.firstName}
+          $hasError={!!errors.firstName}
           {...register('firstName', {
             required: true,
             maxLength: 20,
@@ -172,7 +172,7 @@ export default function Form() {
 
       <StyledLabel>
         <StyledInput
-          hasError={!!errors.lastName}
+          $hasError={!!errors.lastName}
           {...register('lastName', {
             required: true,
             maxLength: 20,
@@ -187,7 +187,7 @@ export default function Form() {
 
       <StyledLabel>
         <StyledInput
-          hasError={!!errors.email}
+          $hasError={!!errors.email}
           {...register('email', {
             required: true,
             pattern: /^\S+@\S+\.\S+$/,
@@ -205,7 +205,7 @@ export default function Form() {
 
       <StyledLabel>
         <StyledInput
-          hasError={!!errors.phone}
+          $hasError={!!errors.phone}
           type="tel"
           {...register('phone', {
             validate: (value) =>
@@ -219,7 +219,7 @@ export default function Form() {
 
       <StyledLabel>
         <StyledInput
-          hasError={!!errors.address}
+          $hasError={!!errors.address}
           {...register('address', { required: true, maxLength: 100 })}
           aria-label="Address"
           placeholder="Enter your address"
@@ -230,7 +230,7 @@ export default function Form() {
 
       <StyledLabel>
         <StyledSelect
-          hasError={!!errors.service}
+          $hasError={!!errors.service}
           {...register('service', { required: true })}
           aria-label="Service"
         >
@@ -252,7 +252,11 @@ export default function Form() {
       )}
 
       {isVerified && !isSubmitted && (
-        <StyledInput type="submit" aria-label="Submit" />
+        <StyledInput
+          type="submit"
+          aria-label="Submit"
+          $hasError={!!errors.service}
+        />
       )}
 
       {isSubmitted && (
