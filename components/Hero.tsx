@@ -19,7 +19,7 @@ export default function Hero() {
             duration: 0.75,
             repeat: Infinity,
             repeatType: 'reverse',
-            repeatDelay: 10,
+            repeatDelay: 5,
             delay: 0,
           }}
         >
@@ -38,7 +38,7 @@ export default function Hero() {
             duration: 0.75,
             repeat: Infinity,
             repeatType: 'reverse',
-            repeatDelay: 10,
+            repeatDelay: 5,
             delay: 0.5,
           }}
         >
