@@ -18,15 +18,20 @@ export default function Home() {
           </div>
           <div className="intro flex items-center gap-10">
             <div
-              className="hidden min-[1096px]:block"
+              className="hidden w-auto min-[1096px]:block"
               style={{
                 position: 'absolute',
                 zIndex: 10,
                 left: '15%',
-                top: '70%',
+                top: '65%',
               }}
             >
-              <Image src="/pr_badge.png" alt="logo" width={800} height={800} />
+              <Image
+                src="/pr_badge.png"
+                alt="logo"
+                width={1000}
+                height={1000}
+              />
             </div>
             <div className="ml-auto max-w-full min-[1096px]:max-w-3/5 min-[1096px]:text-center xl:pr-72">
               <strong>
