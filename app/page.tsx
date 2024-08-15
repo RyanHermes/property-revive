@@ -1,10 +1,10 @@
 import Image from 'next/image'
+import { galada } from './fonts'
 import Hero from '@/components/Hero'
 import Form from '@/components/Form'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TopFooter from '@/components/TopFooter'
-import { galada } from './fonts'
 import GutterImageComparison from '@/components/GutterImageComparison'
 import WindowImageComparison from '@/components/WindowImageComparison'
 import { BackgroundGradient } from '@/components/ui/background-gradient'
@@ -200,7 +200,7 @@ export default function Home() {
               </p>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 Our power washing service removes dirt, grime, and mildew from
-                your property's exterior surfaces.
+                your property&apos;s exterior surfaces.
               </p>
             </BackgroundGradient>
             <BackgroundGradient
@@ -218,8 +218,8 @@ export default function Home() {
                 Soft Washing
               </p>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                Our soft washing service gently cleans your property's exterior
-                surfaces from mold and stains without causing damage.
+                Our soft washing service gently cleans your property&apos;s
+                exterior surfaces from mold and stains without causing damage.
               </p>
             </BackgroundGradient>
             <BackgroundGradient
