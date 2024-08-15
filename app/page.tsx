@@ -4,8 +4,10 @@ import Form from '@/components/Form'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TopFooter from '@/components/TopFooter'
+import { galada } from './fonts'
 import GutterImageComparison from '@/components/GutterImageComparison'
 import WindowImageComparison from '@/components/WindowImageComparison'
+import { BackgroundGradient } from '@/components/ui/background-gradient'
 
 export default function Home() {
   return (
@@ -65,9 +67,11 @@ export default function Home() {
         </div>
       </section>
       <section id="services">
-        <div className="services h-auto w-full p-10">
-          <h1 className="text-center">Services</h1>
-          <div className="servicesList grid grid-cols-1 justify-items-center gap-10">
+        <div className="services p-10">
+          <h1 className={`${galada.className} m-10 text-center md:text-9xl`}>
+            Services
+          </h1>
+          {/* <div className="servicesList grid grid-cols-1 justify-items-center gap-10">
             <div className="service mx-auto flex max-w-2xl flex-col items-center rounded-lg shadow-2xl">
               <Image
                 className="m-10"
@@ -140,12 +144,111 @@ export default function Home() {
                 prevents them from returning.
               </p>
             </div>
+          </div> */}
+          <div className="flex flex-wrap justify-evenly gap-4">
+            <BackgroundGradient
+              containerClassName="max-w-sm"
+              className="max-w-sm rounded-[22px] bg-white p-4 sm:p-10 dark:bg-zinc-900"
+            >
+              <Image
+                className="m-10 mx-auto"
+                src="/window_cleaning_blue.png"
+                alt="logo"
+                width={100}
+                height={100}
+              />
+              <p className="mb-2 mt-4 text-base text-black sm:text-xl dark:text-neutral-200">
+                Window Washing
+              </p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                Our expert window washing service ensures that your windows are
+                sparkling clean, inside and out.
+              </p>
+            </BackgroundGradient>
+            <BackgroundGradient
+              containerClassName="max-w-sm"
+              className="max-w-sm rounded-[22px] bg-white p-4 sm:p-10 dark:bg-zinc-900"
+            >
+              <Image
+                className="m-10 mx-auto"
+                src="/gutter_cleaning_blue.png"
+                alt="logo"
+                width={100}
+                height={100}
+              />
+              <p className="mb-2 mt-4 text-base text-black sm:text-xl dark:text-neutral-200">
+                Gutter Cleaning
+              </p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                Our thorough gutter cleaning service ensures that your gutters
+                are free of debris and functioning properly.
+              </p>
+            </BackgroundGradient>
+            <BackgroundGradient
+              containerClassName="max-w-sm"
+              className="max-w-sm rounded-[22px] bg-white p-4 sm:p-10 dark:bg-zinc-900"
+            >
+              <Image
+                className="m-10 mx-auto"
+                src="/pressure_cleaning_blue.png"
+                alt="logo"
+                width={100}
+                height={100}
+              />
+              <p className="mb-2 mt-4 text-base text-black sm:text-xl dark:text-neutral-200">
+                Power Washing
+              </p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                Our power washing service removes dirt, grime, and mildew from
+                your property's exterior surfaces.
+              </p>
+            </BackgroundGradient>
+            <BackgroundGradient
+              containerClassName="max-w-sm"
+              className="max-w-sm rounded-[22px] bg-white p-4 sm:p-10 dark:bg-zinc-900"
+            >
+              <Image
+                className="m-10 mx-auto"
+                src="/soft_cleaning_blue.png"
+                alt="logo"
+                width={100}
+                height={100}
+              />
+              <p className="mb-2 mt-4 text-base text-black sm:text-xl dark:text-neutral-200">
+                Soft Washing
+              </p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                Our soft washing service gently cleans your property's exterior
+                surfaces from mold and stains without causing damage.
+              </p>
+            </BackgroundGradient>
+            <BackgroundGradient
+              containerClassName="max-w-sm"
+              className="max-w-sm rounded-[22px] bg-white p-4 sm:p-10 dark:bg-zinc-900"
+            >
+              <Image
+                className="m-12 mx-auto"
+                src="/pest_cleaning_blue.png"
+                alt="logo"
+                width={100}
+                height={100}
+              />
+              <p className="mb-2 mt-4 text-base text-black sm:text-xl dark:text-neutral-200">
+                Pest Control
+              </p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                Our pest control service eliminates pests from your property and
+                prevents them from returning.
+              </p>
+            </BackgroundGradient>
           </div>
         </div>
       </section>
       <section className="Results">
         <div className="results h-auto w-full p-10">
-          <h1 className="text-center">Results</h1>
+          <h1 className={`${galada.className} m-10 text-center md:text-9xl`}>
+            Results
+          </h1>
           <div className="flex flex-col justify-center gap-20 md:flex-row">
             <WindowImageComparison />
             <GutterImageComparison />
@@ -153,8 +256,10 @@ export default function Home() {
         </div>
       </section>
       <section id="contact">
-        <div className="contactForm h-auto w-full p-10 pt-0">
-          <h1 className="text-center">Contact Us</h1>
+        <div className="contactForm h-auto w-full p-10">
+          <h1 className={`${galada.className} m-10 text-center md:text-9xl`}>
+            Contact Us
+          </h1>
           <div className="contactFormContent">
             <div className="contactFormForm">
               <Form />

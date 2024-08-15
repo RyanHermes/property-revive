@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const TopFooter = () => {
   return (
-    <div className="m-0 overflow-hidden border-0 p-0">
+    <div className="m-0 translate-y-2 overflow-hidden border-0 p-0">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 6000 190"

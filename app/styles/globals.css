@@ -82,7 +82,9 @@ h1 {
 }
 
 .services {
-  background-color: #add8e6;
+  /* background-color: #add8e6; */
+  /* background: linear-gradient(to bottom, #a5dcf3, #1e3a8a); */
+  background: linear-gradient(to bottom, #a5dcf3, #000000);
 }
 
 .results .comparison {
