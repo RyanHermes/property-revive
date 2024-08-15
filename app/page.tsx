@@ -145,7 +145,7 @@ export default function Home() {
               </p>
             </div>
           </div> */}
-          <div className="flex flex-wrap justify-evenly gap-4">
+          <div className="pointer-events-none m-16 flex flex-wrap justify-evenly gap-14 md:pointer-events-auto">
             <BackgroundGradient
               containerClassName="max-w-sm"
               className="max-w-sm rounded-[22px] bg-white p-4 sm:p-10 dark:bg-zinc-900"
